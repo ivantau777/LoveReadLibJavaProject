@@ -5,7 +5,7 @@ Case 1 Correct Sign In
 
 1. Enter "ivantau777" into "Логин" field
 2. Enter "123456789" into "Пароль" field
-3. 3. Сlick on the check box "Запомнить меня"
+3. Сlick on the check box "Запомнить меня"
 4. Сlick on the button "Вход"
 
 ER : Sign In is correct. User can see "Выход" link.
