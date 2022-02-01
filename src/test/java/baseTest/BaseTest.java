@@ -6,6 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import pages.StartPage;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,6 +16,8 @@ public class BaseTest {
 
     Logger logger = Logger.getLogger(getClass());
 
+    protected StartPage startPage;
+
     @Before
     public void setUp() {
         WebDriverManager.chromedriver().setup();
@@ -22,7 +25,7 @@ public class BaseTest {
         webDriver.manage().window().maximize();
         webDriver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         logger.info("Browser was opened");
-
+        startPage = new StartPage(webDriver);
     }
 
     @After
