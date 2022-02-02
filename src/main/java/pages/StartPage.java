@@ -55,7 +55,7 @@ public class StartPage extends ParentPage{
 
     public LoginErrorPage clickOnEnterButtonWithInvalidCred(){
         clickOnElement(buttonSubmitEnter);
-        return new LoginErrorPage();
+        return new LoginErrorPage(webDriver);
     }
 
 }
