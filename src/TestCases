@@ -19,23 +19,9 @@ Case 2 Incorrect Sign In with incorrect login
 
 ER : Sign In is incorrect. User can see message "Возникла ошибка при вводе Логина" on LoginErrorPage
 .//p[contains(text(),'Возникла ошибка при вводе ')]//b[text()='Логина'].
+
 -----------------------------------------------------
-Case 3 Correct search on the site after Sign In
-
-1. Enter "ivantau777" into "Логин" field
-2. Enter "123456789" into "Пароль" field
-3. Сlick on the check box "Запомнить меня"
-4. Submit login form
-5. Enter "Дарья Донцова" into Search field
-6. Click on the button "Поиск"
-
-ER: Correct search on the site. User can see
-1) Message "Ищем: Дарья Донцова" in the span .//span[@class='search_h1']
-2) link on result .//a[contains(@title,'Дарья Донцова')]
-
-on the Search page.
------------------------------------------------------
-Case 4 Changing Email on the same
+Case 3 Changing Email on the same
 
 1. Enter "ivantau777" into "Логин" field
 2. Enter "123456789" into "Пароль" field
@@ -47,7 +33,7 @@ Case 4 Changing Email on the same
 
 ER: Error message is present ( .//div[@class = 'error_border_reg'])
 -----------------------------------------------------
-Case 5 Changing password
+Case 4 Changing password
 
 1. Enter "ivantau777" into "Логин" field
 2. Enter "123456789" into "Пароль" field
@@ -60,4 +46,6 @@ Case 5 Changing password
 
 ER: The message .//p[contains(text(),'Смена пароля прошла успешно')] on EditPasswordPage,
 User can Sign In with new password
+-----------------------------------------------------
+Case 5 ?
 -----------------------------------------------------
