@@ -1,5 +1,6 @@
 package pages;
 
+import libs.TestData;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -56,6 +57,15 @@ public class StartPage extends ParentPage{
     public LoginErrorPage clickOnEnterButtonWithInvalidCred(){
         clickOnElement(buttonSubmitEnter);
         return new LoginErrorPage(webDriver);
+    }
+
+    public HomePage loginWithValidCred(){
+        openStartPage();
+        enterLoginIntoLoginField(TestData.VALID_LOGIN);
+        enterPasswordIntoPasswordField(TestData.VALID_PASS);
+        clickOnCheckBoxRemember();
+        clickOnEnterButtonWithValidCred();
+        return new HomePage(webDriver);
     }
 
 }

@@ -1,6 +1,7 @@
 package loginTests;
 
 import baseTest.BaseTest;
+import libs.TestData;
 import org.junit.Test;
 
 public class LoginTest extends BaseTest {
@@ -8,10 +9,7 @@ public class LoginTest extends BaseTest {
     @Test
     public void validLoginTest(){
         startPage.openStartPage()
-                .enterLoginIntoLoginField("ivantau777")
-                .enterPasswordIntoPasswordField("123456789")
-                .clickOnCheckBoxRemember()
-                .clickOnEnterButtonWithValidCred()
+                .loginWithValidCred()
                 .checkIsExitLinkDisplayed();
     }
 
@@ -19,7 +17,7 @@ public class LoginTest extends BaseTest {
     public void invalidLoginTest(){
         startPage.openStartPage()
                 .enterLoginIntoLoginField("ivantau7778")
-                .enterPasswordIntoPasswordField("123456789")
+                .enterPasswordIntoPasswordField(TestData.VALID_PASS)
                 .clickOnCheckBoxRemember()
                 .clickOnEnterButtonWithInvalidCred()
                 .checkIsLoginErrorMessageDisplayed();
