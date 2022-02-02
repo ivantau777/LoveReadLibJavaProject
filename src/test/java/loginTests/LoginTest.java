@@ -15,4 +15,14 @@ public class LoginTest extends BaseTest {
                 .checkIsExitLinkDisplayed();
     }
 
+    @Test
+    public void invalidLoginTest(){
+        startPage.openStartPage()
+                .enterLoginIntoLoginField("ivantau7778")
+                .enterPasswordIntoPasswordField("123456789")
+                .clickOnCheckBoxRemember()
+                .clickOnEnterButtonWithInvalidCred()
+                .checkIsLoginErrorMessageDisplayed();
+
+    }
 }
