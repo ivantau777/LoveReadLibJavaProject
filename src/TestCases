@@ -47,5 +47,5 @@ Case 4 Changing password
 ER: The message .//p[contains(text(),'Смена пароля прошла успешно')] on EditPasswordPage,
 User can Sign In with new password
 -----------------------------------------------------
-Case 5 ?
+Case 5 ? Переход на страницу архива
 -----------------------------------------------------
