@@ -21,7 +21,7 @@ ER : Sign In is incorrect. User can see message "Возникла ошибка �
 .//p[contains(text(),'Возникла ошибка при вводе ')]//b[text()='Логина'].
 
 -----------------------------------------------------
-Case 3 Changing Email on the same
+Case 3 Changing Email to the same
 
 1. Enter "ivantau777" into "Логин" field
 2. Enter "123456789" into "Пароль" field
