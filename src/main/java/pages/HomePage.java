@@ -11,6 +11,9 @@ public class HomePage extends ParentPage {
     @FindBy(xpath = ".//a[text()='Выход']")
     private WebElement linkExit;
 
+    @FindBy(xpath = ".//a[text()='Личный кабинет']")
+    private WebElement linkProfile;
+
     public HomePage(WebDriver webDriver) {
         super(webDriver);
     }
@@ -23,6 +26,12 @@ public class HomePage extends ParentPage {
     public HomePage checkIsExitLinkDisplayed() {
         Assert.assertTrue("Exit link is not displayed", isElementDisplayed(linkExit));
         return this;
+    }
+
+    public ProfilePage clickOnMyProfileLink(){
+        webDriverWait10.until(ExpectedConditions.visibilityOf(linkProfile));
+        clickOnElement(linkProfile);
+        return new ProfilePage(webDriver);
     }
 
 }

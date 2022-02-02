@@ -15,13 +15,9 @@ public class LoginErrorPage extends ParentPage {
         super(webDriver);
     }
 
-    private boolean isLoginErrorMessageDisplayed(){
-        webDriverWait10.until(ExpectedConditions.visibilityOf(messageLoginError));
-        return isElementDisplayed(messageLoginError);
-    }
-
     public LoginErrorPage checkIsLoginErrorMessageDisplayed(){
-        Assert.assertTrue("Login error message is not displayed",isLoginErrorMessageDisplayed());
+        webDriverWait10.until(ExpectedConditions.visibilityOf(messageLoginError));
+        Assert.assertTrue("Login error message is not displayed",isElementDisplayed(messageLoginError));
         return this;
     }
 }
