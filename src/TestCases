@@ -21,7 +21,7 @@ ER : Sign In is incorrect. User can see message "Возникла ошибка �
 .//p[contains(text(),'Возникла ошибка при вводе ')]//b[text()='Логина'].
 
 -----------------------------------------------------
-Case 3 Changing Email to the same
+Case 3 Changing Email to the already existing
 
 1. Enter "ivantau777" into "Логин" field
 2. Enter "123456789" into "Пароль" field
@@ -31,7 +31,7 @@ Case 3 Changing Email to the same
 6. Enter "ivan.taurus777@gmail.com" into field "Новый e-mail"
 7. Submit this form
 
-ER: Error message is present ( .//div[@class = 'error_border_reg'])
+ER: Error message is present and contain password reminder link
 -----------------------------------------------------
 Case 4 Changing password
 

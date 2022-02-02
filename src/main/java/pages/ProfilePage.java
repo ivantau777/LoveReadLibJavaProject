@@ -17,8 +17,8 @@ public class ProfilePage extends ParentPage{
     @FindBy(xpath = ".//input[@name='ml_submit']")
     private WebElement buttonSubmitNewEmail;
 
-    @FindBy(xpath = ".//div[@class = 'error_border_reg' ]")
-    private WebElement messageChangingEmailError;
+    @FindBy(xpath = ".//a[@href='reminder.php']")
+    private WebElement linkReminder;
 
     public ProfilePage(WebDriver webDriver) {
         super(webDriver);
@@ -39,9 +39,9 @@ public class ProfilePage extends ParentPage{
         return this;
     }
 
-    public ProfilePage checkIsErrorEmailChangingMessageDisplayed(){
-        webDriverWait10.until(ExpectedConditions.visibilityOf(messageChangingEmailError));
-        Assert.assertTrue("Error massage was not displayed", isElementDisplayed(messageChangingEmailError));
+    public ProfilePage checkIsPasswordRemindLinkDisplayed(){
+        webDriverWait10.until(ExpectedConditions.visibilityOf(linkReminder));
+        Assert.assertTrue("Password reminder link in the error massage was not displayed", isElementDisplayed(linkReminder));
         return this;
     }
 }
