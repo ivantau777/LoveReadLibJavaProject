@@ -14,6 +14,12 @@ public class ParentPageWithUserSideBlocks extends ParentPage{
     @FindBy(xpath = ".//a[text()='Личный кабинет']")
     private WebElement linkProfile;
 
+    @FindBy(xpath = ".//input[@name='p']")
+    private WebElement inputPageForSearch;
+
+    @FindBy(xpath = ".//input[@value='Перейти']")
+    private WebElement buttonSearchPageInArchive;
+
     public ParentPageWithUserSideBlocks(WebDriver webDriver) {
         super(webDriver);
     }
@@ -34,5 +40,15 @@ public class ParentPageWithUserSideBlocks extends ParentPage{
         webDriverWait10.until(ExpectedConditions.visibilityOf(linkExit));
         clickOnElement(linkExit);
         return new StartPage(webDriver);
+    }
+
+    public HomePage enterNumberOfPageForSearch(String number){
+        enterTextIntoElement(inputPageForSearch,number);
+        return new HomePage(webDriver);
+    }
+
+    public ArchiveSearchPage clickOnSearchPageInArchiveButton(){
+        clickOnElement(buttonSearchPageInArchive);
+        return new ArchiveSearchPage(webDriver);
     }
 }
