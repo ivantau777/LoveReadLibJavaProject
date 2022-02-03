@@ -47,5 +47,14 @@ Case 4 Changing password
 ER: The message .//p[contains(text(),'Смена пароля прошла успешно')] on EditPasswordPage,
 User can Sign In with new password
 -----------------------------------------------------
-Case 5 ? Переход на страницу архива
+Case 5  Go to the book archive page
+
+1. Enter "ivantau777" into "Логин" field
+2. Enter "123456789" into "Пароль" field
+3. Сlick on the check box "Запомнить меня"
+4. Submit login form
+5. Enter number of archive page (which exists) into "Страница номер" field
+6. Click on button "Перейти"
+
+ER: User can see header "Архив книг - страница № " + entered number of the page
 -----------------------------------------------------
