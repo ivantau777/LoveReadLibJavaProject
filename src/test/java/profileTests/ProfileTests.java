@@ -1,6 +1,7 @@
 package profileTests;
 
 import baseTest.BaseTest;
+import libs.TestData;
 import org.junit.Test;
 
 public class ProfileTests extends BaseTest {
@@ -26,6 +27,12 @@ public class ProfileTests extends BaseTest {
                 .enterNewPassword1IntoInput(newPassword)
                 .enterNewPassword2IntoInput(newPassword)
                 .clickOnSaveNewPasswordButton()
-                .checkIsSuccessChangePassMessDisplayed();
+                .checkIsSuccessChangePassMessDisplayed()
+
+                .clickOnExitLink()
+                .enterLoginIntoLoginField(TestData.VALID_LOGIN)
+                .enterPasswordIntoPasswordField(newPassword)
+                .clickOnEnterButtonWithValidCred()
+                .checkIsExitLinkDisplayed();
     }
 }
