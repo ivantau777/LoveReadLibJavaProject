@@ -18,12 +18,8 @@ public class HomePage extends ParentPage {
         super(webDriver);
     }
 
-    private boolean isExitLinkDisplayed() {
-        webDriverWait10.until(ExpectedConditions.visibilityOf(linkExit));
-        return isElementDisplayed(linkExit);
-    }
-
     public HomePage checkIsExitLinkDisplayed() {
+        webDriverWait10.until(ExpectedConditions.visibilityOf(linkExit));
         Assert.assertTrue("Exit link is not displayed", isElementDisplayed(linkExit));
         return this;
     }

@@ -15,4 +15,16 @@ public class ProfileTests extends BaseTest {
                 .clickOnSaveNewEmailButton()
                 .checkIsPasswordRemindLinkDisplayed();
     }
+
+    @Test
+    public void changingPassword(){
+        startPage.openStartPage()
+                .loginWithValidCred()
+                .clickOnMyProfileLink()
+                .checkIsRedirectToProfilePage()
+                .enterNewPassword1IntoInput("123456789")
+                .enterNewPassword2IntoInput("123456789")
+                .clickOnSaveNewPasswordButton()
+                .checkIsSuccessChangePassMessDisplayed();
+    }
 }
