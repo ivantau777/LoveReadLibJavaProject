@@ -16,14 +16,15 @@ public class ProfileTests extends BaseTest {
                 .checkIsPasswordRemindLinkDisplayed();
     }
 
+    private String newPassword = "123456789";
     @Test
     public void changingPassword(){
         startPage.openStartPage()
                 .loginWithValidCred()
                 .clickOnMyProfileLink()
                 .checkIsRedirectToProfilePage()
-                .enterNewPassword1IntoInput("123456789")
-                .enterNewPassword2IntoInput("123456789")
+                .enterNewPassword1IntoInput(newPassword)
+                .enterNewPassword2IntoInput(newPassword)
                 .clickOnSaveNewPasswordButton()
                 .checkIsSuccessChangePassMessDisplayed();
     }
