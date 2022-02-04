@@ -12,13 +12,19 @@ public class ArchiveSearchPage extends ParentPageWithUserSideBlocks{
     @FindBy(xpath = ".//p[@class='take_h2']")
     private WebElement headerOfArchivePage;
 
+    @Override
+    String getRelativeUrl() {
+        return "/index_book.php?id_genre=1&p=";
+    }
+
     public ArchiveSearchPage(WebDriver webDriver) {
         super(webDriver);
     }
 
-    public ArchiveSearchPage checkIsHeaderOfArchivePageVisible(){
+    public ArchiveSearchPage checkIsRedirectToArchiveSearchPage(){
         webDriverWait10.until(ExpectedConditions.visibilityOf(headerOfArchivePage));
         Assert.assertTrue("Header of archive page is not displayed",isElementDisplayed(headerOfArchivePage));
+        checkUrlWithPattern();
         return this;
     }
 
