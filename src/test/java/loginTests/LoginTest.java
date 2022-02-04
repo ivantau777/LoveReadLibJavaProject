@@ -20,6 +20,7 @@ public class LoginTest extends BaseTest {
                 .enterPasswordIntoPasswordField(TestData.VALID_PASS)
                 .clickOnCheckBoxRemember()
                 .clickOnEnterButtonWithInvalidCred()
+                .checkIsRedirectToLoginErrorPage()
                 .checkIsLoginErrorMessageDisplayed();
 
     }

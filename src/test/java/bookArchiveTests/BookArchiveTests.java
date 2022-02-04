@@ -13,7 +13,7 @@ public class BookArchiveTests extends BaseTest {
                 .loginWithValidCred()
                 .enterNumberOfPageForSearch(numberOfPageForSearch)
                 .clickOnSearchPageInArchiveButton()
-                .checkIsHeaderOfArchivePageVisible()
+                .checkIsRedirectToArchiveSearchPage()
                 .checkIsHeaderOfArchivePageCorrect(numberOfPageForSearch);
     }
 }

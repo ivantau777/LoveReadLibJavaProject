@@ -29,6 +29,11 @@ public class ProfilePage extends ParentPageWithUserSideBlocks{
     @FindBy(xpath = ".//input[@name='ps_submit']")
     private WebElement buttonSubmitNewPassword;
 
+    @Override
+    String getRelativeUrl() {
+        return "/profile.php";
+    }
+
     public ProfilePage(WebDriver webDriver) {
         super(webDriver);
     }

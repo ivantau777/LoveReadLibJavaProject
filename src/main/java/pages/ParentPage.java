@@ -8,15 +8,28 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static org.hamcrest.CoreMatchers.containsString;
 
-public class ParentPage {
+
+abstract public class ParentPage {
 
     Logger logger = Logger.getLogger(getClass());
 
     WebDriver webDriver;
 
     WebDriverWait webDriverWait10;
-    protected String baseURL = "http://loveread.ec";
+
+    protected String baseUrl = "http://loveread.ec";
+
+    abstract String getRelativeUrl();
+
+    protected void  checkUrl(){
+        Assert.assertEquals("Invalid page", baseUrl + getRelativeUrl(),webDriver.getCurrentUrl());
+    }
+
+    protected void checkUrlWithPattern(){
+        Assert.assertThat("Invalid page",webDriver.getCurrentUrl(),containsString(baseUrl + getRelativeUrl()));
+    }
 
     public ParentPage(WebDriver webDriver) {
         this.webDriver = webDriver;

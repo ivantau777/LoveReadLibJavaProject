@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ParentPageWithUserSideBlocks extends ParentPage{
+abstract public class ParentPageWithUserSideBlocks extends ParentPage{
 
     @FindBy(xpath = ".//a[text()='Выход']")
     private WebElement linkExit;

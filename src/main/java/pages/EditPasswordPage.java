@@ -11,8 +11,18 @@ public class EditPasswordPage extends ParentPageWithUserSideBlocks{
     @FindBy(xpath = ".//p[contains(text(),'Смена пароля прошла успешно')]")
     private WebElement successChangePassMessage;
 
+    @Override
+    String getRelativeUrl() {
+        return "/info.php?me=edit_password";
+    }
+
     public EditPasswordPage(WebDriver webDriver) {
         super(webDriver);
+    }
+
+    public EditPasswordPage checkIsRedirectToChangePasswordPage(){
+        checkUrl();
+        return this;
     }
 
     public EditPasswordPage checkIsSuccessChangePassMessDisplayed(){

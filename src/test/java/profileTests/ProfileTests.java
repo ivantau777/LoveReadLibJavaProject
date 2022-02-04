@@ -27,6 +27,7 @@ public class ProfileTests extends BaseTest {
                 .enterNewPassword1IntoInput(newPassword)
                 .enterNewPassword2IntoInput(newPassword)
                 .clickOnSaveNewPasswordButton()
+                .checkIsRedirectToChangePasswordPage()
                 .checkIsSuccessChangePassMessDisplayed()
 
                 .clickOnExitLink()

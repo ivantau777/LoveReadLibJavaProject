@@ -20,13 +20,18 @@ public class StartPage extends ParentPage{
     @FindBy(xpath = ".//input[@name='remember']")
     private WebElement checkBoxRemember;
 
+    @Override
+    String getRelativeUrl() {
+        return "";
+    }
+
     public StartPage(WebDriver webDriver) {
         super(webDriver);
     }
 
     public StartPage openStartPage(){
         try{
-            webDriver.get(baseURL + "/");
+            webDriver.get(baseUrl + "/");
             logger.info("Start page was opened");
         } catch (Exception e) {
             logger.error("Can not open Start Page" + e);
