@@ -17,23 +17,21 @@ public class ProfileTests extends BaseTest {
                 .checkIsPasswordRemindLinkDisplayed();
     }
 
-    private String newPassword = "123456789";
+    private String newPassword = "1234567890";
     @Test
     public void changingPassword(){
         startPage.openStartPage()
                 .loginWithValidCred()
                 .clickOnMyProfileLink()
-                .checkIsRedirectToProfilePage()
-                .enterNewPassword1IntoInput(newPassword)
-                .enterNewPassword2IntoInput(newPassword)
-                .clickOnSaveNewPasswordButton()
-                .checkIsRedirectToChangePasswordPage()
-                .checkIsSuccessChangePassMessDisplayed()
+                .changePasswordOnSpecified(newPassword)
 
                 .clickOnExitLink()
                 .enterLoginIntoLoginField(TestData.VALID_LOGIN)
                 .enterPasswordIntoPasswordField(newPassword)
                 .clickOnEnterButtonWithValidCred()
-                .checkIsExitLinkDisplayed();
+                .checkIsExitLinkDisplayed()
+
+                .clickOnMyProfileLink()
+                .changePasswordOnSpecified(TestData.VALID_PASS);
     }
 }
