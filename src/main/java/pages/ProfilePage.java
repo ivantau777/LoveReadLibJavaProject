@@ -73,4 +73,14 @@ public class ProfilePage extends ParentPageWithUserSideBlocks{
         Assert.assertTrue("Password reminder link in the error massage was not displayed", isElementDisplayed(linkReminder));
         return this;
     }
+
+    public EditPasswordPage changePasswordOnSpecified(String password){
+        checkIsRedirectToProfilePage();
+        enterNewPassword1IntoInput(password);
+        enterNewPassword2IntoInput(password);
+        clickOnSaveNewPasswordButton()
+                .checkIsRedirectToChangePasswordPage()
+                .checkIsSuccessChangePassMessDisplayed();
+        return new EditPasswordPage(webDriver);
+    }
 }
